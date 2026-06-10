@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* Tus variables completas */
+    --text-display-2xl: clamp(3rem, 2.5rem + 2.5vw, 5rem);
+    --text-display-xl: clamp(2.5rem, 2.1rem + 2vw, 4rem);
+    --text-display-lg: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+    --text-display-md: clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
+    --text-display-sm: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --text-display-xs: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1rem);
+
+    --font-figtree: "Figtree", sans-serif;
+    --Primitive-Blaze-color-blaze-500: #E76002;
+    --Primitive-Amber-color-amber-500: #F7B63B;
+    --Primitive-Obsidian-color-50: #E7E7E8;
+    --Primitive-Obsidian-color-100:#B4B4B7;
+    --Primitive-Obsidian-color-300: #5D5D63;
+    --Primitive-White-color-500: #fff;
+    --Primitive-White-color-600: #E8E8E8;
+    --main-gradient: linear-gradient(90deg, var(--Primitive-Blaze-color-blaze-500) 0%, var(--Primitive-Amber-color-amber-500) 100%);
+}
+
+
+.tabs-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.tabs-container{
+    width: 1196px;
+}
+
+.tab-content { 
+    display: none; 
+    padding-top: 2rem;
+    border-top: 1px solid var(--Primitive-White-color-600);  }
+
+.tab-content.active { 
+    display: block; }
+
+.tab-btn { 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border: none; 
+    background: white;
+    font-family: "Figtree"; 
+    font-size: 1rem;
+    transition: ease-in 300ms;
+    color: var(--Primitive-Obsidian-color-100);
+    
+
+}
+    
+.tab-btn.active { 
+    background: white; 
+    background: var(--main-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative;
+    transition: ease-in 300ms;
+    
+}
+
+
+.tab-btn.active::before{
+content: "";
+    position: absolute;
+    bottom: -1.5px;
+    z-index: 9999;
+    left: 0px;
+    background:var(--main-gradient);
+    width: 135px;
+    height: 3px;
+    border-radius: 100px;
+
+}
+
+
+.success-cases-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:28px;
+
+}
+
+
+.success-case{
+    width: auto;
+    height: 26.3125rem;
+    background-image: url(./assets/perrito.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1.64rem;
+    font-family: "Figtree";
+    overflow: hidden;
+}
+
+.success-tag{
+    background: var(--main-gradient);
+    width: 9.375rem;
+    padding: 0.6rem 1.5rem;
+    margin-left: 1.64rem;
+    border-radius: 2rem;
+    height: auto;
+    display: flex;
+    color: white;
+}
+
+.success-content{
+    background: rgba(13, 13, 22, 0.60);
+backdrop-filter: blur(6.949999809265137px);
+    color: white;
+    padding-left: 1.64rem;
+    padding-right: 1.64rem;
+    padding-bottom: 3rem;
+    padding-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap:0.4rem;
+}
+
+.success-title{
+    background: var(--main-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    font-size: 2rem;
+}
+
+.success-text{
+    width: 28.48275rem;
+    font-size: 1.25rem;
+    color: var(--Primitive-White-color-600);
+}
+
+@media (max-width:1000px){
+    .success-text{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width:780px){
+    .success-cases-wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .success-text{
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+

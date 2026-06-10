@@ -1,0 +1,18 @@
+.swiper {
+  width: 1196px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0cap;
+}
+
+
+.swiper-wrapper{
+  width:1196px;
+}
+
+
+.swiper-slide{
+  background-color: aqua;
+}

@@ -1,0 +1,137 @@
+/* --- CONFIGURACIÓN BASE --- */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-figtree);
+}
+
+:root {
+    /* Tus variables completas */
+    --text-display-2xl: clamp(3rem, 2.5rem + 2.5vw, 5rem);
+    --text-display-xl: clamp(2.5rem, 2.1rem + 2vw, 4rem);
+    --text-display-lg: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+    --text-display-md: clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
+    --text-display-sm: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --text-display-xs: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1rem);
+
+    --font-figtree: "Figtree", sans-serif;
+    --Primitive-Blaze-color-blaze-500: #E76002;
+    --Primitive-Amber-color-amber-500: #F7B63B;
+    --Primitive-Obsidian-color-50: #E7E7E8;
+    --Primitive-Obsidian-color-300: #5D5D63;
+    --Primitive-White-color-500: #fff;
+
+    --main-gradient: linear-gradient(90deg, var(--Primitive-Blaze-color-blaze-500) 0%, var(--Primitive-Amber-color-amber-500) 100%);
+}
+
+/* --- HERO SECTION --- */
+section.hero-section {
+    min-height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.70) 100%), 
+                url(./assets/hero-bg-casos.png) 50% / cover no-repeat;
+}
+
+div.hero-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h1.hero-title {
+    color: white;
+    font-size: 2.5rem; 
+    max-width: 44.75rem;
+    width: 90%; 
+    background: var(--main-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+p.hero-text {
+    color: var(--Primitive-Obsidian-color-50);
+    max-width: 35rem;
+    font-size: var(--text-lg);
+    line-height: 1.6;
+}
+
+/* --- METRICS SECTION --- */
+section.metrics {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+div.metrics-wrapper {
+    width: 100%;
+    max-width: 52.75rem;
+    background-color: var(--Primitive-White-color-500);
+    box-shadow: 0 11px 26.1px 0 rgba(231, 97, 2, 0.146);
+    border-radius: 2rem;
+    
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 4.5rem;
+    padding: 2.5rem;
+    
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    margin-top: -150px; 
+    overflow: visible;
+}
+
+/* --- BREAKPOINT PARA DESKTOP --- */
+@media (min-width: 768px) {
+    h1.hero-title {
+        font-size: var(--text-display-2xl);
+        width: 100%;
+    }
+
+    div.metrics-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        height: 13.063rem;
+        margin-top: -100px; 
+        padding: 2rem;
+    }
+}
+
+div.metric {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+p.metric-number {
+    font-size: var(--text-display-sm);
+    font-weight: bold;
+    background: var(--main-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p.metric-title {
+    font-size: var(--text-display-xs);
+    font-weight: 600;
+    color: var(--Primitive-Obsidian-color-300);
+}

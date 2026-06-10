@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tabs.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="tabs-section">
+      <div class="tabs-container">
+        <div class="tabs-header">
+          <button class="tab-btn active" onclick="openTab(event, 'tab1')">
+            Parametro 01
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab2')">
+            Parametro 02
+          </button>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+          <div class="success-cases-wrapper" id="wrapper-tab1"></div>
+        </div>
+
+        <div id="tab2" class="tab-content">
+          <div class="success-cases-wrapper" id="wrapper-tab2"></div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const casos = [
+        {
+          titulo: "Caso de éxito 01",
+          texto:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus velit quisquam.",
+        },
+        {
+          titulo: "Caso de éxito 02",
+          texto:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus velit quisquam.",
+        },
+        {
+          titulo: "Caso de éxito 03",
+          texto:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus velit quisquam.",
+        },
+        {
+          titulo: "Caso de éxito 04",
+          texto:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus velit quisquam.",
+        },
+        {
+          titulo: "Caso de éxito 05",
+          texto:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus velit quisquam.",
+        },
+        {
+          titulo: "Caso de éxito 06",
+          texto:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus velit quisquam.",
+        },
+      ];
+
+      function renderCasos(wrapperId) {
+        const wrapper = document.getElementById(wrapperId);
+        wrapper.innerHTML = casos
+          .map(
+            (caso) => `
+        <article class="success-case">
+            <div class="success-tag">Caso de éxito</div>
+            <div class="success-content">
+                <h3 class="success-title">${caso.titulo}</h3>
+                <p class="success-text">${caso.texto}</p>
+            </div>
+        </article>
+    `,
+          )
+          .join("");
+      }
+
+      function openTab(evt, tabName) {
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((c) => c.classList.toggle("active", c.id === tabName));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) =>
+            b.classList.toggle("active", b === evt.currentTarget),
+          );
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCasos("wrapper-tab1");
+        renderCasos("wrapper-tab2");
+      });
+    </script>
+  </body>
+</html>
